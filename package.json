@@ -1,0 +1,21 @@
+{
+  "name": "solid-palm-tree",
+  "version": "1.0.0",
+  "description": "learning DevOps",
+  "homepage": "https://github.com/hengryman-03/solid-palm-tree#readme",
+  "bugs": {
+    "url": "https://github.com/hengryman-03/solid-palm-tree/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hengryman-03/solid-palm-tree.git"
+  },
+  "license": "ISC",
+  "author": "Heng Rui",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "node test.js"
+  }
+}

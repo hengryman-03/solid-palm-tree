@@ -1,0 +1,26 @@
+name: CI Pipeline
+
+on: # Define the trigger for the workflow
+  push:
+    branches: [ main ] # Trigger the workflow on push to the main branch
+    # this ensures that the pipeline runs only when changes are pushed to the main branch, which is typically used for production-ready code. 
+    # This helps maintain the integrity of the production environment by ensuring that only tested and reviewed code is deployed.
+
+  jobs: # Define the jobs that will run as part of the workflow
+    build:
+      runs-on: ubuntu-latest # Specify the operating system for the job (why ubuntu-latest? It's a common choice for CI pipelines due to its stability and wide support for development tools)
+
+      steps: # Define the steps that will be executed in the job
+        - name: Checkout code # Step to check out the code from the repository
+          uses: actions/checkout@v5 # Use the official GitHub Action for checking out code
+
+        - name: Set up Node.js # Step to set up Node.js environment
+          uses: actions/setup-node@v3 # Use the official GitHub Action for setting up Node.js
+          with:
+            node-version: '16' # Specify the version of Node.js to use
+
+        - name: Install dependencies # Step to install project dependencies
+          run: npm install # Run the command to install dependencies defined in package.json
+
+        - name: Run tests # Step to run tests
+          run: npm test # Run the command to execute tests defined in package.json
